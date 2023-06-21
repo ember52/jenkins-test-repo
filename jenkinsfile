@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                echo "checking your code"
+                echo "this is the checking stage"
                
             }
         }
@@ -16,14 +16,14 @@ pipeline {
                 }
             }
             steps {
-                echo "testing your app" 
+                echo "this is the testing stage" 
             }
         }
         
         stage('deployment') {  
             steps {
-                echo "your code is deployed right now"
-                echo "this build number $BUILD_NUMBER"
+                echo "this is the deployment stage"
+                echo "the build number is $BUILD_NUMBER"
             }
         }    
     }
