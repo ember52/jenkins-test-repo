@@ -1,6 +1,6 @@
 pipeline {
      agent any
-
+    stages {
         stage('test') {
             when {
                 expression{
@@ -19,4 +19,4 @@ pipeline {
             }
         }    
     }
-
+}
