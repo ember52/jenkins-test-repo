@@ -1,22 +1,31 @@
 pipeline {
      agent any
+
     stages {
+        stage('check') {
+            steps {
+                echo "checking your code"
+               
+            }
+        }
+
         stage('test') {
             when {
                 expression{
-                    params.test-success == true 
+                    params.test == true 
                 }
             }
             steps {
-                echo "this is the testing stage" 
+                echo "testing your app" 
             }
         }
         
         stage('deployment') {  
             steps {
-                echo "this is the deployment stage"
+                echo "your code is deployed right now"
                 echo "this build number $BUILD_NUMBER"
             }
         }    
     }
+
 }
